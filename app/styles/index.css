@@ -72,18 +72,19 @@ main {
 
 .menu li {
   list-style: none;
-  margin-left: 2rem;
+  /* margin-left: 2rem; */
+  padding: 1rem;
 }
 
 .menu a {
   color: var(--white);
   font-size: 2rem;
-  font-weight: 700;
+  /* font-weight: 700; */
   text-decoration: none;
   transition: all 0.3s;
 }
 
-.menu-item:hover a {
+.activo {
   color: var(--primary);
 }
 
@@ -100,8 +101,24 @@ span::before {
   width: 100%;
 }
 
+.activo a {
+  color: var(--primary);
+}
+
+.activo span::before {
+  width: 100%;
+}
+
 @media (max-width: 768px) {
+  .barra {
+    flex-direction: column;
+  }
+
   .menu {
-    display: none;
+    margin-left: -60px;
+  }
+
+  .header {
+    padding: 3rem 0;
   }
 }
