@@ -4,7 +4,7 @@ const { Response } = require("@remix-run/node");
 
 const { RemixServer } = require("@remix-run/react");
 
-const isbot = require("isbot").default;
+const isbot = require("isbot");
 
 const { renderToPipeableStream } = require("react-dom/server");
 
