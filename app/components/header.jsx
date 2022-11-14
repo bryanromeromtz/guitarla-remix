@@ -3,7 +3,6 @@ import logo from "../../public/img/logo.svg";
 
 function Header() {
   const location = useLocation();
-  console.log(location);
   return (
     <header className="header">
       <div className="contenedor barra">

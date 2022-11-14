@@ -2,6 +2,7 @@ import { Meta, Links, Outlet, Scripts, LiveReload } from "@remix-run/react";
 
 import styles from "~/styles/index.css";
 import Header from "~/components/header";
+import Footer from "~/components/footer";
 
 export function meta() {
   return {
@@ -60,6 +61,7 @@ function Document({ children }) {
         <Header />
         {/* This is where the app will be rendered */}
         {children}
+        <Footer />
         <Scripts />
         <LiveReload />
       </body>

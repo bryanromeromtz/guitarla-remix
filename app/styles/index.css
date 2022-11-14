@@ -122,3 +122,197 @@ span::before {
     padding: 3rem 0;
   }
 }
+
+.footer {
+  background-color: var(--black);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 1em;
+  padding: 2rem;
+}
+
+/* footer logo en la primer columna */
+.footer-logo {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.footer-logo img {
+  width: 20rem;
+  margin-bottom: 2rem;
+}
+
+.footer-logo p {
+  color: var(--white);
+  text-align: initial;
+}
+
+/* footer enlaces en la segunda columna */
+
+.footer-enlaces {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-enlaces .navegacion {
+  margin-left: -100px;
+}
+
+.footer-enlaces h3 {
+  margin-bottom: 2rem;
+  color: var(--white);
+}
+
+.footer-enlaces a {
+  color: var(--white);
+  text-decoration: none;
+  transition: all 0.3s;
+  align-self: initial;
+}
+
+.footer-enlaces ul {
+  list-style: none;
+}
+
+.footer-enlaces li {
+  margin-bottom: 1rem;
+}
+
+.footer-enlaces a:hover {
+  color: var(--primary);
+  transition: all 0.3s;
+}
+
+/* footer contacto en la tercera columna */
+
+.footer-contacto {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-contacto span {
+  padding-right: 1rem;
+}
+
+.footer-contacto h3 {
+  margin-bottom: 2rem;
+  color: var(--white);
+}
+
+.footer-contacto p {
+  color: var(--white);
+  text-align: initial;
+  padding: 0 1rem;
+}
+
+.footer-contacto a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: all 0.3s;
+  align-self: initial;
+}
+
+/* Romper el grid  */
+
+.footer-linea {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  border-top: 1px solid gray;
+  margin: 2rem 0;
+}
+
+.footer-copy {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  text-align: center;
+  color: var(--white);
+}
+
+.footer-copy p {
+  margin: 0;
+}
+
+.footer-copy a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+/* -------- Responsive Footer -------- */
+
+@media (max-width: 768px) {
+  .footer {
+    grid-template-columns: repeat(1, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 1em;
+    padding: 2rem;
+  }
+
+  .footer-logo {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .footer-enlaces {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+
+  .footer-enlaces {
+    display: flex;
+    flex-direction: column;
+    align-items: initial;
+  }
+
+  .footer-enlaces .navegacion {
+    margin-left: -30px;
+  }
+
+  .footer-contacto {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
+
+  .footer-contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: initial;
+  }
+
+  .footer-linea {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 4;
+    grid-row-end: 5;
+  }
+
+  .footer-copy {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 5;
+    grid-row-end: 6;
+  }
+}
