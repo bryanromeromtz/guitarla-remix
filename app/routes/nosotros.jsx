@@ -1,5 +1,3 @@
-import { Meta } from "@remix-run/react";
-
 import imagen from "../../public/img/nosotros.jpg";
 import styles from "~/styles/nosotros.css";
 
