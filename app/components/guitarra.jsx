@@ -5,11 +5,16 @@ function Guitarra({ guitarra }) {
   const { url } = imagen.data.attributes.formats.medium;
   return (
     <div className="guitarra">
-      <img src={url} alt={`Imagen guitarra ${nombre}`} />
+      <div className="guitarra-img-wrapp">
+        <img src={url} alt={`Imagen guitarra ${nombre}`} />
+      </div>
       <div className="contenido">
         <h3>{nombre}</h3>
-        <p className="descripcion">{descripcion}</p>
-        <p className="precio">${precio}</p>
+        {/* limitar la descripción a 100 caracteres */}
+        <p className="descripcion">{descripcion.substr(0, 100)}...</p>
+        <p className="precio">
+          <span>${precio}</span>
+        </p>
         <Link className="enlace" to={`/guitarras/${guitarra.url}`}>
           Ver Producto
         </Link>
