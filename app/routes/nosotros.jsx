@@ -26,7 +26,7 @@ export function meta() {
 function Nosotros() {
   return (
     <main className="contenedor nosotros">
-      <h2 className="heading">Nosotros</h2>
+      <h2 className="heading heading-line">Nosotros</h2>
       <div className="contenido">
         <img src={imagen} alt="Imagen Nosotros" />
         <div className="texto">

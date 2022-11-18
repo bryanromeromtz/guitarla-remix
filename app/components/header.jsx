@@ -33,10 +33,10 @@ function Header() {
             </li>
             <li
               className={
-                location.pathname === "/tienda" ? "activo" : "menu-item"
+                location.pathname === "/guitarras" ? "activo" : "menu-item"
               }
             >
-              <Link to="/tienda">Tienda</Link>
+              <Link to="/guitarras">Tienda</Link>
               <span className="menu-item-border"></span>
             </li>
           </ul>

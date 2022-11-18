@@ -1,0 +1,50 @@
+/* <section className="curso">
+<div className="contenedor curso-grid">
+  <div className="curso__contenido">
+    <h2 className="heading heading-line">{titulo}</h2>
+    <p className="curso__description">{contenido}</p>
+  </div>
+  <div className="spacer"></div>
+</div>
+</section> */
+
+.curso {
+  padding: 5rem 0;
+}
+
+.curso .curso__description {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 1.9rem;
+  color: var(--white);
+}
+
+@media (min-width: 768px) {
+  .curso-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .curso .contenido {
+    grid-column: 2 / 3;
+  }
+}
+
+@media (max-width: 768px) {
+  .curso {
+    padding: 2rem 0;
+  }
+
+  .curso-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .curso__contenido {
+    margin-bottom: 2rem;
+  }
+
+  .curso__description {
+    text-align: left;
+  }
+}

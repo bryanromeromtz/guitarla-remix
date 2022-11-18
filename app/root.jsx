@@ -1,8 +1,20 @@
-import { Meta, Links, Outlet, Scripts, LiveReload } from "@remix-run/react";
+import {
+  Meta,
+  Links,
+  Outlet,
+  Scripts,
+  LiveReload,
+  useCatch,
+  Link,
+} from "@remix-run/react";
 
 import styles from "~/styles/index.css";
 import Header from "~/components/header";
 import Footer from "~/components/footer";
+import ErrorPage from "~/components/errorPage";
+import { useEffect } from "react";
+import { getVisitantes } from "./models/visitantes.server";
+import axios from "axios";
 
 export function meta() {
   return {
@@ -43,9 +55,32 @@ export function links() {
 }
 
 export default function App() {
+  useEffect(() => {
+    const datosDelUsuario = async () => {
+      let dispositivo = "";
+      await navigator?.userAgentData
+        ?.getHighEntropyValues?.(["platform"])
+        .then((res) => res.platform)
+        .then((res) => {
+          if (res.includes("Android") || res.includes("iOS")) {
+            dispositivo = "mobile";
+          } else if (res.includes("Windows") || res.includes("Mac")) {
+            dispositivo = "desktop";
+          } else {
+            dispositivo = "tablet";
+          }
+        });
+      const res = await axios.get("http://localhost:1337/api/visitantes");
+      const visitantes = res.data;
+      console.log(visitantes);
+    };
+    datosDelUsuario();
+  }, []);
+
   return (
     <Document>
       <Outlet />
+      <ErrorPage />
     </Document>
   );
 }
@@ -67,4 +102,32 @@ function Document({ children }) {
       </body>
     </html>
   );
+}
+
+// Manejo de errores
+
+export function CatchBoundary() {
+  const error = useCatch();
+  console.log(error);
+  return (
+    <Document>
+      <div className="error">
+        <h1 className="error-heading">Ups! Algo salió mal</h1>
+        <p className="error-error">
+          <strong>Error:</strong> {error?.status}
+        </p>
+        <p className="error-mensaje">{error?.data}</p>
+
+        <p className="error-link">
+          <Link className="error-link" to="/">
+            Volver al inicio
+          </Link>
+        </p>
+      </div>
+    </Document>
+  );
+}
+
+export function ErrorBoundary({ error }) {
+  return <Document></Document>;
 }

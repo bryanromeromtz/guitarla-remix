@@ -16,58 +16,64 @@
   }
 }
 
-/* hacer hover en la imagen y hacer zoom en la imagen  sin que se salga del contenedor */
-
-.guitarras-grid .guitarra {
+.guitarras-grid .tienda {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
   border: 1px solid #ccc;
-  padding: 2rem;
   background-color: #fff;
   transition: all 0.3s ease;
   border-radius: 0.5rem;
 }
 
-.guitarras-grid .guitarra:hover {
-  transform: scale(1.05);
+.guitarras-grid .tienda:hover {
+  transform: scale(0.98);
   transition: all 0.3s ease;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-.guitarra img {
+.guitarra-img-wrapp {
+  border-bottom: 1px solid #ccc;
   width: 100%;
-  height: 500px;
+}
+
+.tienda img {
+  width: 100%;
+  height: 400px;
   object-fit: contain;
 }
 
 .contenido {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  padding: 2rem;
 }
 
 .contenido h3 {
   font-size: 2rem;
   text-align: center;
+  margin-top: 0;
+  color: var(--primary);
 }
 
 .contenido p {
-  text-align: justify;
-}
-
-.contenido .precio {
-  font-size: 2rem;
   text-align: center;
 }
 
-.contenido a {
+.contenido .tienda-precio {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  color: #b12704;
+  margin-top: 0;
+}
+
+.contenido .enlace {
   justify-self: center;
   width: 100%;
   max-width: 300px;
   padding: 1rem;
   background-color: #000;
-  height: 5rem;
   color: #fff;
   font-size: 1.8rem;
   text-align: center;
@@ -75,8 +81,13 @@
   transition: all 0.3s ease;
 }
 
-.contenido a:hover {
-  background-color: rgb(43, 42, 42);
-  text-decoration: underline;
+.contenido .enlace:hover {
+  color: #000;
   transition: all 0.3s ease;
+  background-color: var(--primary);
+  font-weight: bold;
+}
+
+.spacer {
+  height: 6rem;
 }

@@ -37,6 +37,27 @@ main {
   margin: 5rem 0;
 }
 
+[class*="heading-line"] {
+  position: relative;
+}
+
+[class*="heading-line"]::after {
+  content: "";
+  width: 13rem;
+  height: 0.5rem;
+  background-color: var(--primary);
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 768px) {
+  [class*="heading"] {
+    font-size: 3.3rem;
+  }
+}
+
 /* -------- Header -------- */
 
 .header {
@@ -129,15 +150,14 @@ span::before {
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 10px;
   grid-row-gap: 1em;
-  padding: 2rem;
 }
 
-/* footer logo en la primer columna */
 .footer-logo {
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 1;
   grid-row-end: 2;
+  padding: 4rem 5rem;
 }
 
 .footer-logo img {
@@ -148,9 +168,8 @@ span::before {
 .footer-logo p {
   color: var(--white);
   text-align: initial;
+  font-size: 1.8rem;
 }
-
-/* footer enlaces en la segunda columna */
 
 .footer-enlaces {
   grid-column-start: 2;
@@ -177,6 +196,7 @@ span::before {
   text-decoration: none;
   transition: all 0.3s;
   align-self: initial;
+  font-size: 1.8rem;
 }
 
 .footer-enlaces ul {
@@ -191,8 +211,6 @@ span::before {
   color: var(--primary);
   transition: all 0.3s;
 }
-
-/* footer contacto en la tercera columna */
 
 .footer-contacto {
   grid-column-start: 3;
@@ -227,8 +245,6 @@ span::before {
   align-self: initial;
 }
 
-/* Romper el grid  */
-
 .footer-linea {
   grid-column-start: 1;
   grid-column-end: 4;
@@ -249,6 +265,7 @@ span::before {
 
 .footer-copy p {
   margin: 0;
+  font-size: 1.5rem;
 }
 
 .footer-copy a {
@@ -270,6 +287,7 @@ span::before {
   .footer-logo {
     grid-column-start: 1;
     grid-column-end: 2;
+    padding: 2rem 0;
   }
 
   .footer-enlaces {
@@ -314,5 +332,77 @@ span::before {
     grid-column-end: 2;
     grid-row-start: 5;
     grid-row-end: 6;
+  }
+}
+
+/* -------- Error -------- */
+
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 0;
+}
+
+.error-heading {
+  font-size: 5rem;
+  margin-bottom: 2rem;
+}
+
+.error-error strong {
+  color: var(--primary);
+  font-size: 2.8rem;
+}
+
+.error-error {
+  font-size: 2.8rem;
+  margin: 2rem 0;
+}
+
+.error-mensaje {
+  font-size: 2.5rem;
+}
+
+.error-link a {
+  text-decoration: none;
+  transition: all 0.3s;
+  background-color: rgba(0, 0, 0, 0.89);
+  color: var(--white);
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 2.5rem;
+}
+
+.error-link a:hover {
+  background-color: var(--primary);
+  transition: all 0.3s;
+}
+
+/* -------- Responsive Error -------- */
+
+@media (max-width: 768px) {
+  .error {
+    padding: 2rem 0;
+  }
+
+  .error-heading {
+    font-size: 3rem;
+  }
+
+  .error-error strong {
+    font-size: 2rem;
+  }
+
+  .error-error {
+    font-size: 2rem;
+  }
+
+  .error-mensaje {
+    font-size: 1.8rem;
+  }
+
+  .error-link a {
+    font-size: 1.8rem;
   }
 }
